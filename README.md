@@ -1,8 +1,8 @@
 # Practice test 
 
-1. I’ve used the Virtual Box Vagrant Provider (Hypervisor), so you can install Virtual Box or just change the Vagrantfile’s provider and set it up to MVware, KVM…etc.
+1. I’ve used the VirtualBox Vagrant Provider. If you don't have VirtualBox installed yet, plese install it or just change the Vagrantfile’s provider to your preferred Provider (AWS, VMware, Docker...etc)
 
-2. Ansible should be installed in the vagrant host
+2. Be sure that Ansible is also installed in the Vagrant Host. 
 
 * Ubuntu/Debian: $ sudo apt-get install ansible
 * RH/CentOS: $ sudo yum install ansible
