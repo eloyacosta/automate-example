@@ -1,0 +1,7 @@
+---
+- hosts: linux-vm
+  sudo: true 
+  roles: 
+   - mongodb
+   - flask
+   - myapp
