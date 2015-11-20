@@ -4,7 +4,7 @@
 - name: Create app directory tree
   file: path=/home/www/ state=directory
 
-- name: Deploy myapp source code 
+- name: Deploy app source code 
   copy: src=app.py dest=/home/www mode=0644
   # restart app if anyhing changes 
   notify: restart flask app 
