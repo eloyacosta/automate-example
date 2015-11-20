@@ -1,17 +1,12 @@
 ---
 # Let's deploy and lauch the flask app
-- name: Install Git
-  apt: name=git state=present 
 
-- file: path=/var/lib/myapp state=directory mode=0755
+- name: Create app directory tree
+  file: path=/home/www/ state=directory
 
-- name: Deploy myapp source code
-  copy: src=files/demo dest=/var/lib/myapp/demo mode=0755
+- name: Deploy myapp source code 
+  copy: src=app.py dest=/home/www mode=0644
+  # restart app if anyhing changes 
+  notify: restart flask app 
 
-# I'd rather run the webservice with www-data user
-- name: Lauch the WebService  
-  shell: sudo -u www-data /var/lib/myapp/demo & 
-
-# - name: Deploy myapp source code form Github repo
-#  git: repo=https://github.com/eloyacosta/datarobot.git/Vagrantfile dest=/var/lib/myapp/myapp.py
 

@@ -1,9 +1,33 @@
 ---
-- name: Ensure Python and PIP are installed 
+- name: Install base packages  
   apt: name={{ item }} state=present
   with_items:
    - python 
    - python-pip
+   - python-virtualenv
+   - nginx
+   - gunicorn
+   - supervisor 
 
 - name: Install Flask 
   shell: sudo pip install flask
+
+- name: Create environment directory 
+  file: path=/home/www/ state=directory
+
+- name: Activate python virtualenv 
+  shell: virtualenv /home/www/env 
+
+- name: Configure NGINX 
+  template: src=default.j2 dest=/etc/nginx/sites-available/default
+  notify: reload NGINX
+
+- name: Ensure NGINX is started 
+  service: name=nginx state=started enabled=yes
+
+- name: Configure supervisor to run Gunicorn
+  copy: src=myapp.conf dest=/etc/supervisor/conf.d/
+  notify: restart flask app
+
+- name: Ensure supervisor is started 
+  service: name=supervisor state=started enabled=yes
