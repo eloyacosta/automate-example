@@ -1,0 +1,16 @@
+#{{ ansible_managed }}
+
+server {
+	
+    listen {{ ansible_eth1.ipv4.address }}:8080;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /static {
+        alias  /home/www/static/;
+    }
+}

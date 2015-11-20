@@ -1,0 +1,7 @@
+---
+
+- name: reload NGINX
+  service: name=nginx state=reloaded
+
+- name: restart flask app
+  supervisorctl: name=myapp state=restarted
