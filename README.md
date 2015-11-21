@@ -13,4 +13,4 @@
 6. Exec command: 
   * $ vagrant up
 7. Open the your web browser
-8. Use this URL to check if Flask is running: http://192.168.100.2:8080/data
+8. Use this URL to check if Flask is running: http://192.168.100.2:8080
