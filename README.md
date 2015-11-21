@@ -7,9 +7,10 @@
   * RH/CentOS: $ sudo yum install ansible
   * MacOSX: $ sudo pip install ansible
   * More info: http://docs.ansible.com/ansible/intro_installation.html
-4. Clone this repo to your prefered route in the local fs
-5. Change to the root of the cloned repo
-6. Exec command: "vagrant up"
+4. Clone this repo to your prefered route in the local fs (ej: ~/git/)
+  * $ git clone https://github.com/eloyacosta/datarobot.git
+5. Change to dir ~/git/datarobot
+6. Exec command: 
+  * $ vagrant up
 7. Open the your web browser
-8. Check the Flask is running: http://192.168.100.2:8080/data
-
+8. Use this URL to check if Flask is running: http://192.168.100.2:8080/data
