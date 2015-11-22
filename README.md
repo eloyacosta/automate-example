@@ -1,4 +1,4 @@
-# Practice test 
+# Installation
 
 1. **Install [VirtualBox](https://www.virtualbox.org)**
 2. **Install [Vagrant](https://docs.vagrantup.com/v2/installation/)**
@@ -32,7 +32,7 @@
  
      `` $ vagrant provision`` 
 
-# Some Request testing
+# Some request testing
 
   **Note:** Vagrant will run the virtual server using the IP address **192.168.100.2**
 
@@ -44,17 +44,14 @@
 
      ``$ curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-11-19"``
 
-
 # Unit Tests 
 
   All the app has been written with [Unittest](https://docs.python.org/2/library/unittest.html).
 
   To run the test, be sure you are still in the project directory (i.e: ~/git/automate-example) and exec:
   
-     ```
-     $ vagrant ssh
-     $ cd /home/www/
-     $ pyton test.py
-     ```
+     ``$ vagrant ssh``
+     ``$ cd /home/www/``
+    `` $ pyton test.py``
 
 
