@@ -49,10 +49,14 @@
   All the app tests has been written with [Unittest](https://docs.python.org/2/library/unittest.html).
   To run the tests, be sure you are still in the project directory (i.e: ~/git/automate-example) and exec:
   
+  - Log in the VM
+
      ``$ vagrant ssh``
+
+  - Change to the app deployment dir
 
      ``$ cd /home/www/``
 
+  - Run the tests
+
      ``$ python test.py``
-
-
