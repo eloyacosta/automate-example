@@ -10,3 +10,7 @@
   copy: src=app.py dest=/home/www mode=0644
   # I call the handler to restart my app if anyhing changes 
   notify: restart flask app
+
+- name: Copy app tests
+  copy: src=test.py dest=/home/www mode=0644
+  # I call the handler to restart my app if anyhing changes 
