@@ -10,7 +10,7 @@ from pymongo.errors import ExecutionTimeout
 from dateutil import parser
 
 my_client = MongoClient('mongodb://localhost:27017/')
-my_db = my_client.datarobot
+my_db = my_client.mydatabase
 my_collection = my_db.customers
 
 app = Flask(__name__)
@@ -20,32 +20,33 @@ def validate(elem):
 	try:
 		recv_checksum = elem['md5checksum']
 	except (KeyError, NameError, TypeError, RuntimeError) as e:
-		app.logger.debug('ERROR Value for key: %s, while trying to get checksum info for: %s' % (e,json.dumps(elem)) )
+		#app.logger.debug('ERROR Value for key: %s, while trying to get checksum info for: %s' % (e,json.dumps(elem)) )
 		return False
+
 	#delete the md5 key-value from the received elem 
 	del elem['md5checksum']
 	#compare checksum 
 	my_checksum = md5(json.dumps(elem)).hexdigest()
 	app.logger.debug('El checksum es %s' % my_checksum)
+
 	if recv_checksum == my_checksum:
 		#I should check if uid is a number and the date is a date
-		#Let's validate data
 		try:
 			elem['uid'] = int(elem['uid'])
 		except (ValueError) as e:
-		    app.logger.debug('ERROR: Value error: %s , for the uid: %s' % (e,elem['uid']) )
+		    #app.logger.debug('ERROR: Value error: %s , for the uid: %s' % (e,elem['uid']) )
 		    return False
 		except (BaseException) as e:
-			app.logger.debug('ERROR: %s , for the uid: %s' % (e,elem['uid']) )
+			#app.logger.debug('ERROR: %s , for the uid: %s' % (e,elem['uid']) )
 			return False
 		# Now the date
 		try:
 			elem['date'] = parser.parse(elem['date'])
 		except (ValueError) as e:
-			app.logger.debug('ERROR:Value error: %s , for the date: %s' % (elem['date']) )
+			#app.logger.debug('ERROR:Value error: %s , for the date: %s' % (elem['date']) )
 			return False
 		except (BaseException) as e:
-			app.logger.debug('ERROR: %s , for the date: %s' % (e,elem['date']) )
+			#app.logger.debug('ERROR: %s , for the date: %s' % (e,elem['date']) )
 			return False
 		#All the checks passed and return the element 
 		return elem
@@ -103,8 +104,6 @@ def mongo_store():
 
 @app.route('/ep2', methods=['GET'])
 def mongo_query():
-	app.logger.debug(request.args.get('uid'))
-	app.logger.debug(request.args.get('date'))
 	#Verify Query params 
 	if request.args.get('uid'):
 		try:
@@ -135,6 +134,6 @@ def mongo_query():
 	return jsonify(success='true', uid=uid , date=dateparam , count=result.count())
 
 if __name__ == '__main__':
-	app.debug = True
+	app.debug = False
 	app.run()
 

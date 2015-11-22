@@ -15,10 +15,10 @@ class MyTestClass(unittest.TestCase):
 
     # clean up logic for the test suite declared in the test module
     # code that is executed after all tests in one test run
+    # This could be useful to delete the tests inserted data 
     @classmethod
     def tearDownClass(cls):
-        my_client = MongoClient('mongodb://localhost:27017/')        
-        my_client.datarobot.customers.drop()
+        pass
 
     # initialization logic
     # code that is executed before each test
