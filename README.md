@@ -19,7 +19,7 @@ Note: Vagrant run the virtual server with the IP address 192.168.100.2
 
 1. You can test to post some data
 
-$ curl -i -X POST http://192.168.100.2:8080/ep1 \
+* $ curl -i -X POST http://192.168.100.2:8080/ep1 \
 -H "Content-Type: application/json" \
 -d '[
 {"uid": "1",
@@ -34,7 +34,7 @@ $ curl -i -X POST http://192.168.100.2:8080/ep1 \
 
 2. You can test API query
 
-$ curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-05-13"
+* $ curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-05-13"
 
 # Unit Tests 
 
