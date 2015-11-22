@@ -3,7 +3,7 @@
 1. **Install [VirtualBox](https://www.virtualbox.org)**
 2. **Install [Vagrant](https://docs.vagrantup.com/v2/installation/)**
 3. **Install [Python](https://www.python.org/downloads/)**
-4. **Install [Ansible](http://docs.ansible.com/ansible/ Ansible)**
+4. **Install [Ansible](http://www.ansible.com/how-ansible-works)**
   - Ubuntu/Debian: $ sudo apt-get install ansible
   - RH/CentOS: $ sudo yum install ansible
   - MacOSX: $ sudo pip install ansible
