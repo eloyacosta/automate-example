@@ -11,23 +11,23 @@
 5. **Clone this repo to your prefered route in the local fs (ej: ~/git/)** 
   - Create dir
 
-     ``mkdir ~/git``
+     ``$ mkdir ~/git``
 
   - Change to dir 
 
-     ``cd ~/git``
+     ``$ cd ~/git``
 
   - Git clone 
 
-     `$ git clone https://github.com/eloyacosta/automate-example.git`
+     ``$ git clone https://github.com/eloyacosta/automate-example.git``
 
 6. **Change to project dir**
 
-   `$ cd automate-example`
+     ``$ cd automate-example``
 
 7. **Exec command:**
 
-   `$ vagrant up`
+     ``$ vagrant up``
 
 8. **You are all set!**
 
@@ -39,7 +39,7 @@
 
   - To provision the machine
  
-     `` $ vagrant provision`` 
+     ``$ vagrant provision`` 
 
 # Some request testing
 
