@@ -4,9 +4,9 @@
 2. **Install [Vagrant](https://docs.vagrantup.com/v2/installation/)**
 3. **Install [Python](https://www.python.org/downloads/)** (v2.7 recomemended)
 4. **Install [Ansible](http://www.ansible.com/how-ansible-works)**
-  - Ubuntu/Debian: $ sudo apt-get install ansible
-  - RH/CentOS: $ sudo yum install ansible
-  - MacOSX: $ sudo pip install ansible
+  - Ubuntu/Debian: ``$ sudo apt-get install ansible``
+  - RH/CentOS: ``$ sudo yum install ansible``
+  - MacOSX: $ ``$ sudo easy_install pip && sudo pip install ansible``
   - More [installing info](http://docs.ansible.com/ansible/intro_installation.html)
 5. **Clone this repo to your prefered route in the local fs (ej: ~/git/)** 
   - Create dir
