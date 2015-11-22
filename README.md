@@ -51,7 +51,7 @@
 
 2. **You can query the API**
 
-     ``$ curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-11-19"``
+     ``$ curl -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-11-19"``
 
 # Unit Tests 
 
