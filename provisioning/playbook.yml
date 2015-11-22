@@ -1,4 +1,8 @@
 ---
+# I left the main playbook clean.
+# I just need to assign the roles to the machine or group.
+# - eloy.acosta@gmail.com
+
 - hosts: linux-vm
   sudo: true 
   roles: 

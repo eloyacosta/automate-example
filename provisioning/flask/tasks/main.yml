@@ -1,4 +1,8 @@
 ---
+# This role install all the flask runtime environmnet 
+# I used NGINX to proxy the client requests
+# - eloy.acosta@gmail.com
+
 - name: Install base packages  
   apt: name={{ item }} state=present
   with_items:
@@ -9,17 +13,27 @@
    - gunicorn
    - supervisor 
 
+##- name: Install Pytest
+ # pip: name=flask
+
+- name: Install Python modules
+  pip: name={{ item }} state=present
+  with_items:
+  - pymongo
+  - python-dateutil
+  - unittest2
+
 - name: Install Flask 
-  shell: sudo pip install flask
+  pip: name=flask
+  notify: activate python virtualenv
 
 - name: Create environment directory 
   file: path=/home/www/ state=directory
 
-- name: Activate python virtualenv 
-  shell: virtualenv /home/www/env 
-
+# I use a template to provide the IP address NGINX should listen
 - name: Configure NGINX 
   template: src=default.j2 dest=/etc/nginx/sites-available/default
+  # I want NGINX to be reloaded if the config file changes 
   notify: reload NGINX
 
 - name: Ensure NGINX is started 
@@ -27,6 +41,7 @@
 
 - name: Configure supervisor to run Gunicorn
   copy: src=myapp.conf dest=/etc/supervisor/conf.d/
+  # I want my app to be reloaded if anything changes 
   notify: restart flask app
 
 - name: Ensure supervisor is started 

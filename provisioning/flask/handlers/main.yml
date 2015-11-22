@@ -1,7 +1,13 @@
 ---
+# This handler is called if NGINX has to be reloaded (gracefully)
+# - eloy.acosta@gmail.com
 
 - name: reload NGINX
   service: name=nginx state=reloaded
 
+# This handler is called if my flask app has to be reloaded 
 - name: restart flask app
   supervisorctl: name=myapp state=restarted
+  
+- name: activate python virtualenv
+  shell: virtualenv /home/www/env 

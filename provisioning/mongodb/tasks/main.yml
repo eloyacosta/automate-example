@@ -1,4 +1,9 @@
 ---
+# This role just install and run mongodb.
+# It is quite simple, but I think is better to build a role because is more reusable 
+# and is more convenient if the mongodb instalation get more complex in the future. 
+# - eloy.acosta@gmail.com
+
 - name: Install MongoDB
   apt: name=mongodb state=present
 

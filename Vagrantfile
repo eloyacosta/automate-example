@@ -14,7 +14,6 @@ Vagrant.configure(2) do |config|
  	    
       linux.vm.hostname = "linux-vm"
       linux.vm.network :private_network, ip: "192.168.100.2"
-#      linux.vm.synced_folder "src/", "/home/www/"
       linux.vm.provision "ansible" do |ansible|
 	      	ansible.inventory_path = "provisioning/inventory"
         	ansible.playbook = "provisioning/playbook.yml"

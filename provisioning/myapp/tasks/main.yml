@@ -1,12 +1,14 @@
 ---
-# Let's deploy and lauch the flask app
+# Let's deploy and lauch the flask app. 
+# I created a role for this, as is more convenient if the app get more complex in the future.  
+# - eloy.acosta@gmail.com
 
 - name: Create app directory tree
   file: path=/home/www/ state=directory
 
 - name: Deploy myapp source code 
   copy: src=app.py dest=/home/www mode=0644
-  # restart app if anyhing changes 
+  # I call the handler to restart my app if anyhing changes 
   notify: restart flask app 
 
 
