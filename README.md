@@ -33,7 +33,7 @@
 
   **Note:** For further executions, if something goes wrong or if you just want to provision the machine again, you have to exec:
   
-  - To boot the machine (if it's donw)
+  - To boot the machine (if it's down)
  
      ``$ vagrant up``
 
