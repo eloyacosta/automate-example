@@ -45,5 +45,14 @@
      ``$ curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-11-19"``
 
 # Unit Tests 
-  All the app has been written with [Unittest](https://docs.python.org/2/library/unittest.html)
-  To run the test, be sure you are still in the project directory (i.e: ~/git/automate-example) and exe
+
+  All the app tests has been written with [Unittest](https://docs.python.org/2/library/unittest.html).
+  To run the tests, be sure you are still in the project directory (i.e: ~/git/automate-example) and exec:
+  
+     ``$ vagrant ssh``
+
+     ``$ cd /home/www/``
+
+     ``$ python test.py``
+
+
