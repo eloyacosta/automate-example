@@ -19,22 +19,11 @@ Note: Vagrant run the virtual server with the IP address 192.168.100.2
 
 1. You can test to post some data
 
-* $ curl -i -X POST http://192.168.100.2:8080/ep1 \
--H "Content-Type: application/json" \
--d '[
-{"uid": "1",
-  "name": "John Doe",
-  "date": "2015-05-12T14:36:00.451765",
-  "md5checksum": "e8c83e232b64ce94fdd0e4539ad0d44f"},
-{"uid": "2",
-   “name”: “Eloy",
-  "date": "2015-05-13T14:36:00.451765",
-  "md5checksum": "b419795d50db2a35e94c8364978d898f"}
-]'
+* curl -X POST http://192.168.100.2:8080/ep1 -H "Accept: application/json" -H "Content-Type: application/json" -d '[{"date": "2015-11-20T14:48:00.451765", "uid": "3", "name": "Perry Manson", "md5checksum": "2ebf36e266bae03f4f7c312d9c82a052"},{"date": "2015-11-20T14:50:00.451766", "uid": "4", "name": "Eloy Acosta", "md5checksum": "c193dab16230b3ef1eafc64570cff69e"},{"date": "2015-11-19T10:20:00.451770", "uid": "1", "name": "DataRobot user", "md5checksum": "8949b7957f976a5f0f4e8e88316f3cc6"},{"date": "2015-11-20T14:53:00.451768", "uid": "4", "name": "Eloy Acosta", "md5checksum": "6067ce211d11fc938e5ad835d82412b1"},{"date": "2015-11-20T12:00:00.451769", "uid": "3", "name": "Perry Manson", "md5checksum": "987ae0f34facc13a5b38434b5293a9e5"},{"date": "2015-11-19T10:20:00.451770", "uid": "1", "name": "DataRobot user", "md5checksum": "8949b7957f976a5f0f4e8e88316f3cc6"}]'
 
 2. You can test API query
 
-* $ curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-05-13"
+* curl -i -X GET "http://192.168.100.2:8080/ep2?uid=1&date=2015-11-19"
 
 # Unit Tests 
 
