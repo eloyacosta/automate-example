@@ -23,7 +23,7 @@
 
 6. **Change to project dir**
 
-   `$ cd ~/git/automate-example`
+   `$ cd automate-example`
 
 7. **Exec command:**
 
