@@ -8,13 +8,22 @@
   - RH/CentOS: $ sudo yum install ansible
   - MacOSX: $ sudo pip install ansible
   - More [installing info](http://docs.ansible.com/ansible/intro_installation.html)
-5. **Clone this repo to your prefered route in the local fs (ej: ~/git/)**
+5. **Clone this repo to your prefered route in the local fs (ej: ~/git/)** 
+  - Create dir
 
-   `$ git clone https://github.com/eloyacosta/automate-example.git`
+     ``mkdir ~/git``
+
+  - Change to dir 
+
+     ``cd ~/git``
+
+  - Git clone 
+
+     `$ git clone https://github.com/eloyacosta/automate-example.git`
 
 6. **Change to project dir**
 
-   `$ cd~/git/automate-example`
+   `$ cd ~/git/automate-example`
 
 7. **Exec command:**
 
