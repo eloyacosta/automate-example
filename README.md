@@ -7,7 +7,7 @@
   - Ubuntu/Debian: ``$ sudo apt-get install ansible``
   - RH/CentOS: ``$ sudo yum install ansible``
   - MacOSX: $ ``$ sudo easy_install pip && sudo pip install ansible``
-  - More [installing info](http://docs.ansible.com/ansible/intro_installation.html)
+  - More [installing info](http://docs.ansible.com/ansible/intro_installation.html) and troubleshooting.
 5. **Clone this repo to your prefered route in the local fs (ej: ~/git/)** 
   - Create dir
 
