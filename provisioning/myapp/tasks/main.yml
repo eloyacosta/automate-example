@@ -9,6 +9,4 @@
 - name: Deploy myapp source code 
   copy: src=app.py dest=/home/www mode=0644
   # I call the handler to restart my app if anyhing changes 
-  notify: restart flask app 
-
-
+  notify: restart flask app
